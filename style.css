@@ -1,0 +1,433 @@
+/* Vibrant and Modern style.css */
+
+:root {
+  --primary-color: #645b5b; /* Deep blue */
+  --accent-color: #f59e0b;  /* Amber */
+  --bg-color: #fef9f3;      /* Warm off-white */
+  --text-color: #1f2937;    /* Rich charcoal */
+  --nav-bg: #ffffff;        /* Pure white */
+  --nav-text: #494040;
+  --footer-bg: #f6f3f3;     /* Light lavender-blue */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+.container {
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px 0;
+}
+
+header {
+  background-color: var(--nav-bg);
+  border-bottom: 2px solid var(--accent-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 16px 0;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+nav {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: var(--nav-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+section {
+  background: #ffffff;
+  padding: 36px;
+  margin-bottom: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.05);
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 24px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+footer {
+  background-color: var(--footer-bg);
+  color: var(--text-color);
+  text-align: center;
+  padding: 24px 0;
+  margin-top: 40px;
+  font-size: 14px;
+  border-top: 1px solid var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  nav a {
+    font-size: 18px;
+  }
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  min-height: 60vh; /* Ensures vertical centering */
+}
+
+button,
+.button {
+  background: transparent;
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  padding: 8px 22px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, border-color 0.2s;
+  margin: 0;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+button:hover,
+.button:hover {
+  background-color: var(--accent-color);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.12);
+  border-color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    min-height: 40vh;
+  }
+  button,
+  .button {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+}
+
+/* Add spacing above button groups */
+.button-grid,
+.button-container {
+  margin-top: 30px; /* Adjust value for 30-40px gap */
+  margin-left: 100px;
+  margin-right: auto;
+  display: flex;
+  gap: 20px; /* Space between buttons */
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align buttons to the left */
+}
+
+.profile-pic {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.intro-text {
+  margin-left: 20px;
+  margin-top: 20px;
+  color: var(--text-color);
+}
+
+.about-extra > * {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.about-extra {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.kavan-image {
+  width: 180px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+.about-text {
+  flex: 1;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 700px) {
+  .about-extra {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .kavan-image {
+    width: 70vw;
+    max-width: 240px;
+    margin-bottom: 12px;
+  }
+  .about-text {
+    text-align: center;
+  }
+}
+
+.vision-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.vision-image {
+  width: 500px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  flex-shrink: 0;
+  margin-top: 0;
+}
+
+@media (max-width: 700px) {
+  .vision-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .vision-image {
+    width: 500vw;
+    max-width: 500px;
+    margin-bottom: 10px;
+  }
+}
+
+.vision-crop {
+  width: 148px; /* 2x thicker than 54px, still cropped */
+  height: 160px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  flex-shrink: 0;
+  margin-top: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.vision-crop .vision-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin-left: 0;
+}
+
+.vision-crop-center {
+  width: 54px;           /* 160px * 0.33 = ~54px, if your image is 160px wide */
+  height: 160px;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+  flex-shrink: 0;
+  margin-top: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.vision-crop-center .vision-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  margin-left: -53px;    /* Shift left by about 33% of the width to center the middle third */
+}
+
+.values-list {
+  margin-left: 36px;
+  margin-top: 18px;
+  margin-bottom: 24px;
+  padding-left: 24px;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.06);
+}
+
+.values-list li {
+  margin-bottom: 10px;
+  font-size: 1.08em;
+  line-height: 1.6;
+  list-style: disc inside;
+}
+
+.direction-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.direction-text {
+  flex: 1;
+}
+
+.mission-image-small {
+  width: 220px;   /* 2x the previous 110px */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(245, 158, 11, 0.10);
+  margin-top: 4px;
+}
+
+.mission-caption {
+  text-align: center;
+  font-size: 0.98em;
+  color: #7a6c3a;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .direction-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .mission-image-small {
+    margin-top: 0;
+  }
+}
+
+.smartgoals-list {
+  margin-left: 36px;
+  margin-top: 18px;
+  margin-bottom: 32px;
+  padding-left: 24px;
+  border-left: 4px solid var(--accent-color);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(30, 144, 255, 0.08);
+}
+
+.smartgoals-list li {
+  margin-bottom: 12px;
+  font-size: 1.08em;
+  line-height: 1.7;
+  list-style: square inside;
+}
+
+.lutke-sections {
+  display: flex;
+  gap: 36px;
+  margin-top: 32px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.lutke-skills,
+.lutke-accomplishments {
+  flex: 1 1 320px;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(30,144,255,0.07);
+  padding: 24px 20px 18px 24px;
+  border-left: 5px solid var(--accent-color, #f59e0b);
+  min-width: 260px;
+}
+
+.lutke-skills h4,
+.lutke-accomplishments h4 {
+  margin-top: 0;
+  color: var(--accent-color, #f59e0b);
+  font-size: 1.18em;
+  letter-spacing: 0.5px;
+}
+
+.lutke-skills ul,
+.lutke-accomplishments ul {
+  margin-left: 18px;
+  margin-top: 12px;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+.lutke-skills li,
+.lutke-accomplishments li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 1.04em;
+  list-style: disc inside;
+}
+
+@media (max-width: 900px) {
+  .lutke-sections {
+    flex-direction: column;
+    gap: 22px;
+  }
+}
+
+.teachify-image {
+  width: 350px;
+  height: auto;
+  display: block;
+  margin: 18px 0 12px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(30,144,255,0.10);
+}
